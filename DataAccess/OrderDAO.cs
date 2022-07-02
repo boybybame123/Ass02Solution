@@ -130,7 +130,7 @@ namespace DataAccess
                 if (ord != null)
                 {
                     string SQLUpdate = "Update Order set OrderId = @OrderId,MemberId = @MemberId,OrderDate = @OrderDate " +
-                        "RequiredDate = @RequiredDate,ShippedDate = @ShippedDate,Freight = @Freight where MemberId = @MemberId";
+                        "RequiredDate = @RequiredDate,ShippedDate = @ShippedDate,Freight = @Freight where OrderId = @OrderId";
                     var parameters = new List<SqlParameter>();
                     parameters.Add(dataProvider.CreateParameter("@OrderId", 4, order.OrderId, DbType.Int32));
                     parameters.Add(dataProvider.CreateParameter("@MemberId", 4, order.MemberId, DbType.Int32));
