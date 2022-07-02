@@ -28,14 +28,14 @@ namespace DataAccess
         public IEnumerable<Member> GetMemberList()
         {
             IDataReader dataReader = null;
-            var memberList = new List<Member>();
+            var members = new List<Member>();
             string SQLSelect = "select MemberId, Email, CompanyName, City, Country, Password from Member";
             try
             {
                 dataReader = dataProvider.GetDataReader(SQLSelect, CommandType.Text, out connection);
                 while (dataReader.Read())
                 {
-                    memberList.Add(new Member
+                    members.Add(new Member
                     {
                         MemberId = dataReader.GetInt32(0),
                         Email = dataReader.GetString(1),
@@ -55,7 +55,7 @@ namespace DataAccess
                 dataReader.Close();
                 CloseConnection();
             }
-            return memberList;
+            return members;
         }
         public Member GetMemberById(int memberId)
         {
