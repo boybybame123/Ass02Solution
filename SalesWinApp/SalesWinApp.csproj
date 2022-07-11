@@ -13,4 +13,10 @@
     <ProjectReference Include="..\DataAccess\DataAccess.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Admin_CRUD_Member\" />
+    <Folder Include="Admin_CRUD_Order\" />
+    <Folder Include="Admin_CRUD_Product\" />
+  </ItemGroup>
+
 </Project>

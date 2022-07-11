@@ -1,20 +1,27 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DataAccess.Repository;
+using Microsoft.Extensions.Configuration;
+using System;
 using System.Windows.Forms;
 
-namespace SalesWinApp
+namespace SaleWinApp
 {
-    public partial class frmLogin : Form
+    public partial class lb_Password : Form
     {
-        public frmLogin()
-        {
+        MemberRepository _memberDAO = new MemberRepository();
+        public lb_Password() {
             InitializeComponent();
+        }
+
+        private void btn_Login_Click(object sender, EventArgs e) {
+            
+            
+        }
+
+
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
