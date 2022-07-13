@@ -1,10 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BusinessObject
+#nullable disable
+
+namespace BussinessObject.Models
 {
     public partial class Order
     {
+        public Order()
+        {
+            OrderDetails = new HashSet<OrderDetail>();
+        }
+
         public int OrderId { get; set; }
         public int MemberId { get; set; }
         public DateTime OrderDate { get; set; }
@@ -12,7 +19,7 @@ namespace BusinessObject
         public DateTime ShippedDate { get; set; }
         public decimal Freight { get; set; }
 
-        public virtual Member OrderNavigation { get; set; } = null!;
-        public virtual OrderDetail OrderDetail { get; set; } = null!;
+        public virtual Member Member { get; set; }
+        public virtual ICollection<OrderDetail> OrderDetails { get; set; }
     }
 }

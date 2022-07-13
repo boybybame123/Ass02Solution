@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace BusinessObject
+#nullable disable
+
+namespace BussinessObject.Models
 {
     public partial class OrderDetail
     {
@@ -11,7 +13,7 @@ namespace BusinessObject
         public int Quantity { get; set; }
         public double Discount { get; set; }
 
-        public virtual Order Order { get; set; } = null!;
-        public virtual Product Product { get; set; } = null!;
+        public virtual Order Order { get; set; }
+        public virtual Product Product { get; set; }
     }
 }

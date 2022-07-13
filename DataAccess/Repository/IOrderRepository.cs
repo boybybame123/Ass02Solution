@@ -1,13 +1,19 @@
-﻿using BusinessObject;
+﻿using BussinessObject.Models;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    public interface IOrderRepository
+    public interface IOrder
     {
-        IEnumerable<Order> GetOrders();
-        Order GetOrderById(int orderId);
-        void InsertOrder(Order order);
-        void UpdateOrder(Order order);
-        void DeleteOrder(int orderId);
+        void SaveOrder(Order p);
+        void DeleteOrder(Order p);
+        void UpdateOrder(Order p);
+        List<Member> GetMembers();
+        List<Order> GetOrder();
+        
     }
 }
